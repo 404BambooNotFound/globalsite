@@ -2,6 +2,7 @@
 include_once("header.php");
 ?>
 
+<h1 class="head">Les GIFs des mois précédents !</h1>
 <div class="row">
 
     <?php
@@ -13,19 +14,24 @@ include_once("header.php");
     if (file_exists($filename)) {
         ?>
         <div class="col-md-2 col-md-offset-1">
-            <img src="<?php $filename; ?>">
+            <h3><?php echo iconv("ISO-8859-1", "UTF-8", strftime("%B", $nextMonth)); ?></h3>
+            <img class="img-previous" src="<?php echo $filename; ?>">
         </div>
 
         <?php
+        $i++;
+        $nextMonth = strtotime('first day of -'.$i.' month');
+        $filename = "/img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
+
         while (file_exists($filename)) {
+            ?>
+            <div class="col-md-2 col-md-offset-1">
+                <img src="<?php echo $filename; ?>">
+            </div>
+            <?php
             $i++;
             $nextMonth = strtotime('first day of -'.$i.' month');
             $filename = "/img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
-            ?>
-            <div class="col-md-2 col-md-offset-1">
-                <img src="<?php $filename; ?>">
-            </div>
-            <?php
         }
     } else {
         ?>

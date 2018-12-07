@@ -40,6 +40,7 @@ h1{
 }
 
 .previous{
+    margin-top: 30px;
     background-color: black;
     color: white;
     border-color: black;
@@ -55,4 +56,15 @@ h1{
     margin-right: auto;
     margin-left: auto;
     margin-top: 35vh;
+}
+
+.head{
+    text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+h3{
+    text-align: center;
+    color: white;
 }
