@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/menusheet.css">
     <link rel="stylesheet" href="../css/commons.css">
     <link rel="stylesheet" href="../css/imgsheet.css">
+    <link rel="stylesheet" href="../css/botsheet.css">
     <!--    meta-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
@@ -39,6 +40,15 @@
                     var found = resultElement.children("div").parent();
                     $("#page-content").html(found);
                 }});
+        }
+
+        function launchBot(){
+            var botView = document.getElementById("bot-view");
+            var box = botView.getAttribute("class");
+
+            if(box != "bot-view show"){
+                botView.setAttribute('class', 'bot-view show');
+            }
         }
     </script>
 

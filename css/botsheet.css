@@ -1,0 +1,26 @@
+.bot-view{
+    margin-right: 20px;
+    height: 500px;
+    width:350px;
+    background-color: white;
+    position:fixed;
+    bottom: 0;
+    right:0;
+    border: 2px solid black;
+    border-radius: 10px 10px 0 0;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.bot-header{
+    background-color: #A9DC40;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 5px;
+}

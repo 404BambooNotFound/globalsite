@@ -52,5 +52,7 @@ h1{
 }
 
 .noPrevious{
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 35vh;
 }

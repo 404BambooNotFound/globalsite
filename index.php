@@ -13,7 +13,7 @@ include_once('view/header.php');
             <p class="homeText">Trouve-les pour nous !</p>
         </div>
         <div class="row">
-            <button class="helpButton">Demander de l'aide</button>
+            <button class="helpButton" onclick="launchBot()">Demander de l'aide</button>
         </div>
     </div>
 

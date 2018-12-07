@@ -3,26 +3,35 @@ include_once("header.php");
 ?>
 
 <div class="row">
-    <img class="col-md-3 side_bamboos" src="../img/side_bamboo.png">
-    <div class="col-md-6">
+
+    <?php
+    $i = 1;
+    $nextMonth = strtotime('first day of -1 month');
+    $filename = "../img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
+    setlocale(LC_TIME, 'fr_FR.utf-8', 'fra');
+
+    if (file_exists($filename)) {
+        ?>
+        <div class="col-md-2 col-md-offset-1">
+            <img src="<?php $filename; ?>">
+        </div>
 
         <?php
-        $nextMonth = strtotime('first day of -1 month');
-        setlocale(LC_TIME, 'fr_FR.utf-8', 'fra');
-        $filename = iconv("ISO-8859-1", "UTF-8", strftime("%B%Y", $nextMonth) . ".gif");
-            if(file_exists($filename))
-            {
-                while (file_exists($filename)) {
-
-                }
-            }
-            else{
-        ?>
-            <h1 class="noPrevious"> <?php echo "Oh non ... aucun GIF n'a déjà été devoilé avant !\nRevenez le mois prochain pour découvrir de nouveau GIF !"; ?> </h1> <?php
+        while (file_exists($filename)) {
+            $i++;
+            $nextMonth = strtotime('first day of -'.$i.' month');
+            $filename = "/img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
+            ?>
+            <div class="col-md-2 col-md-offset-1">
+                <img src="<?php $filename; ?>">
+            </div>
+            <?php
         }
+    } else {
         ?>
-    </div>
-    <img class="col-md-3 side_bamboos" src="../img/side_bamboo_revert.png">
+        <h1 class="col-md-5 col-md-offset-4 noPrevious"> <?php echo "Oh non ... aucun GIF n'a déjà été devoilé avant !\nRevenez le mois prochain pour découvrir de nouveau GIF !"; ?> </h1> <?php
+    }
+    ?>
 </div>
 
 <?php
