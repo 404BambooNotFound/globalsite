@@ -8,7 +8,7 @@ include_once("header.php");
     <?php
     $i = 1;
     $nextMonth = strtotime('first day of -1 month');
-    $filename = "../img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
+    $filename = "img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
     setlocale(LC_TIME, 'fr_FR.utf-8', 'fra');
 
     if (file_exists($filename)) {
@@ -21,7 +21,7 @@ include_once("header.php");
         <?php
         $i++;
         $nextMonth = strtotime('first day of -'.$i.' month');
-        $filename = "/img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
+        $filename = "img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
 
         while (file_exists($filename)) {
             ?>
@@ -31,7 +31,7 @@ include_once("header.php");
             <?php
             $i++;
             $nextMonth = strtotime('first day of -'.$i.' month');
-            $filename = "/img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
+            $filename = "img/gif/" . strftime("%B%Y", $nextMonth) . ".gif";
         }
     } else {
         ?>
