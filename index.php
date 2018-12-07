@@ -1,7 +1,8 @@
 <?php
 include_once('view/header.php');
 ?>
-    <div class="container text-center">
+
+    <div class="container text-center" id="child">
         <div class="row">
             <img class="homeImage" src="img/404.png">
         </div>
@@ -15,6 +16,7 @@ include_once('view/header.php');
             <button class="helpButton">Demander de l'aide</button>
         </div>
     </div>
+
 
 <?php
 include_once('view/footer.php');

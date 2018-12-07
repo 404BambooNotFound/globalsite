@@ -7,8 +7,41 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/menusheet.css">
     <link rel="stylesheet" href="../css/commons.css">
+    <link rel="stylesheet" href="../css/imgsheet.css">
     <!--    meta-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#home").click(function(){
+                $.ajax({url: "../index.php", success: function(result){
+                    var resultElement = $(result);
+                    var found = resultElement.children("div").parent();
+                        $("#page-content").html(found);
+                    }});
+            });
+
+            $("#calendar").click(function(){
+                $.ajax({url: "view/calendarHome.php", success: function(result){
+                        var resultElement = $(result);
+                        var found = resultElement.children("div").parent();
+                        $("#page-content").html(found);
+                        document.getElementById('page-content').style.backgroundColor = 'white';
+                    }});
+            });
+        });
+
+        function seePreviousGIF() {
+            $.ajax({url: "view/calendarPrevious.php", success: function(result){
+                    var resultElement = $(result);
+                    var found = resultElement.children("div").parent();
+                    $("#page-content").html(found);
+                }});
+        }
+    </script>
+
 </head>
 <body>
 <?php
@@ -17,4 +50,4 @@
 <div class="row menu_skip">
 </div>
 
-<div class="content">
+<div class="content col-md-12" id="page-content">
