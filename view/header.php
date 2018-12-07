@@ -4,16 +4,19 @@
     <title>Accueil - 404 : Bamboo not found</title>
 
     <!--    Styles -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/menusheet.css">
-    <link rel="stylesheet" href="../css/commons.css">
-    <link rel="stylesheet" href="../css/imgsheet.css">
-    <link rel="stylesheet" href="../css/botsheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/menusheet.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <link rel="stylesheet" href="css/imgsheet.css">
+    <link rel="stylesheet" href="css/botsheet.css">
     <!--    meta-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/response.js"></script>
+    <script type="text/javascript" src="js/bot.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script>
         $(document).ready(function(){
             $("#home").click(function(){
